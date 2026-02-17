@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pinta y Come</title>
+  <style>
+    body {
+      font-family: "Times New Roman", serif;
+      background-color: #f2d6e0; /* Rosa pastel más opaco */
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #e3a6b8; /* Rosa suave */
+      color: white;
+    }
+    .productos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px;
+    }
+    .producto {
+      background: white;
+      border: 2px solid #e3a6b8;
+      border-radius: 10px;
+      width: 250px;
+      margin: 15px;
+      padding: 15px;
+      text-align: center;
+    }
+    .producto h3 {
+      margin: 10px 0;
+    }
+    button {
+      background-color: #e3a6b8;
+      color: white;
+      border: none;
+      padding: 10px;
+      margin-top: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #c97a94;
+    }
+    #carrito {
+      background: white;
+      margin: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      border: 2px solid #e3a6b8;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🍪 Pinta y Come 🍪</h1>
+    <p>Las galletas más deliciosas con estilo acuarela</p>
+  </header>
+
+  <section class="productos">
+    <div class="producto">
+      <h3>Galleta de Chocolate</h3>
+      <p>Contiene chispas de chocolate pintadas en acuarela</p>
+      <p>Precio: $20</p>
+      <button onclick="agregarCarrito('Chocolate',20)">Añadir al carrito</button>
+    </div>
+    <div class="producto">
+      <h3>Galleta de Vainilla</h3>
+      <p>Suave con esencia natural y detalles en acuarela</p>
+      <p>Precio: $18</p>
+      <button onclick="agregarCarrito('Vainilla',18)">Añadir al carrito</button>
+    </div>
+    <div class="producto">
+      <h3>Galleta de Avena</h3>
+      <p>Con hojuelas doradas y diseño artístico</p>
+      <p>Precio: $22</p>
+      <button onclick="agregarCarrito('Avena',22)">Añadir al carrito</button>
+    </div>
+    <div class="producto">
+      <h3>Galleta de Mantequilla</h3>
+      <p>Clásica con textura suave y tonos pastel</p>
+      <p>Precio: $15</p>
+      <button onclick="agregarCarrito('Mantequilla',15)">Añadir al carrito</button>
+    </div>
+    <div class="producto">
+      <h3>Galleta de Fresa</h3>
+      <p>Con trozos de fresa y detalles rosados en acuarela</p>
+      <p>Precio: $25</p>
+      <button onclick="agregarCarrito('Fresa',25)">Añadir al carrito</button>
+    </div>
+    <div class="producto">
+      <h3>Combo Pinta y Come</h3>
+      <p>6 galletas surtidas con ilustraciones únicas</p>
+      <p>Precio: $100</p>
+      <button onclick="agregarCarrito('Combo Pinta y Come',100)">Añadir al carrito</button>
+    </div>
+  </section>
+
+  <section id="carrito">
+    <h2>🛒 Carrito de Compras</h2>
+    <ul id="listaCarrito"></ul>
+    <p><strong>Total: $<span id="total">0</span></strong></p>
+    <a href="https://wa.me/5214622453213?text=Hola%20quiero%20comprar%20galletas%20de%20Pinta%20y%20Come" target="_blank">
+      <button>Comprar por WhatsApp</button>
+    </a>
+  </section>
+
+  <script>
+    let total = 0;
+    function agregarCarrito(nombre, precio) {
+      const lista = document.getElementById("listaCarrito");
+      const item = document.createElement("li");
+      item.textContent = nombre + " - $" + precio;
+      lista.appendChild(item);
+      total += precio;
+      document.getElementById("total").textContent = total;
+    }
+  </script>
+</body>
+  </html>
+        
